@@ -1,0 +1,640 @@
+/* =====================================================
+   SAVANNA BREW CAFÉ - style.css
+   1. Variables   2. Base   3. Header & Nav   4. Buttons
+   5. Footer      (more sections added in later parts)
+   ===================================================== */
+
+/* ---------- 1. VARIABLES (brand palette) ---------- */
+:root {
+    --brown: #6F4E37;
+    --cream: #F5E9DA;
+    --orange: #D9822B;
+    --dark: #2B1B12;
+    --white: #FFFFFF;
+    --font-heading: "Playfair Display", Georgia, serif;
+    --font-body: "Open Sans", Arial, sans-serif;
+}
+
+/* ---------- 2. BASE ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--dark);
+    background-color: var(--white);
+}
+
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    color: var(--brown);
+    line-height: 1.3;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    color: var(--brown);
+    transition: color 0.3s ease;
+}
+
+a:hover,
+a:focus {
+    color: var(--orange);
+}
+
+/* Centred content wrapper used on every page */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 3rem 1.25rem;
+}
+
+/* ---------- 3. HEADER & NAVIGATION ---------- */
+/* Flexbox: logo left, links right */
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 2rem;
+    background-color: var(--cream);
+    border-bottom: 3px solid var(--orange);
+}
+
+.logo img {
+    height: 60px;
+    width: auto;
+}
+
+.main-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 0.5rem;
+}
+
+.main-nav a {
+    display: block;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    font-weight: 600;
+    color: var(--brown);
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.main-nav a:hover,
+.main-nav a:focus {
+    background-color: var(--brown);
+    color: var(--white);
+}
+
+/* Highlight for the current page */
+.main-nav a.active {
+    background-color: var(--orange);
+    color: var(--white);
+}
+
+/* Visible keyboard focus outline everywhere */
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--orange);
+    outline-offset: 2px;
+}
+
+/* ---------- 4. BUTTONS ---------- */
+.btn {
+    display: inline-block;
+    padding: 0.8rem 1.8rem;
+    background-color: var(--orange);
+    color: var(--white);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover,
+.btn:focus {
+    background-color: var(--brown);
+    color: var(--white);
+    transform: translateY(-2px);
+}
+
+/* ---------- 5. FOOTER ---------- */
+.site-footer {
+    background-color: var(--brown);
+    color: var(--cream);
+    padding: 2.5rem 2rem 1rem;
+}
+
+.site-footer h3 {
+    color: var(--white);
+}
+
+.site-footer a {
+    color: var(--cream);
+}
+
+.site-footer a:hover,
+.site-footer a:focus {
+    color: var(--orange);
+}
+
+/* Three equal columns */
+.footer-columns {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.footer-columns > div {
+    flex: 1;
+}
+
+.copyright {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--cream);
+    font-size: 0.9rem;
+}
+
+
+/* ---------- 6. HERO (home page) ---------- */
+/* Text overlaid on a background image, with a dark gradient for contrast */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 480px;
+    padding: 2rem 1.25rem;
+    text-align: center;
+    color: var(--white);
+    background:
+        linear-gradient(rgba(43, 27, 18, 0.55), rgba(43, 27, 18, 0.55)),
+        url("../images/gallery-coffee-banner.jpg") center / cover no-repeat;
+}
+
+.hero h1 {
+    color: var(--white);
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+.hero .tagline {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    font-style: italic;
+    margin-bottom: 1.5rem;
+}
+
+/* ---------- 7. PAGE BANNERS (inner pages) ---------- */
+.page-banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 220px;
+    padding: 1.5rem 1.25rem;
+    text-align: center;
+}
+
+.page-banner h1 {
+    color: var(--white);
+    font-size: 2.6rem;
+}
+
+/* One background image per page, same dark overlay */
+.banner-about {
+    background:
+        linear-gradient(rgba(43, 27, 18, 0.55), rgba(43, 27, 18, 0.55)),
+        url("../images/about-coffee-banner.jpg") center / cover no-repeat;
+}
+
+.banner-menu {
+    background:
+        linear-gradient(rgba(43, 27, 18, 0.55), rgba(43, 27, 18, 0.55)),
+        url("../images/menu-coffee-banner.jpg") center / cover no-repeat;
+}
+
+.banner-gallery {
+    background:
+        linear-gradient(rgba(43, 27, 18, 0.55), rgba(43, 27, 18, 0.55)),
+        url("../images/gallery-coffee-banner.jpg") center / cover no-repeat;
+}
+
+.banner-contact {
+    background:
+        linear-gradient(rgba(43, 27, 18, 0.55), rgba(43, 27, 18, 0.55)),
+        url("../images/contact-coffee-banner.jpg") center / cover no-repeat;
+}
+
+/* ---------- 8. HOME: WELCOME, CARDS, CTA ---------- */
+.welcome {
+    text-align: center;
+    max-width: 800px;
+}
+
+.favourites h2 {
+    text-align: center;
+}
+
+/* Flexbox: three equal-width cards */
+.card-row {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.card {
+    flex: 1;
+    background-color: var(--white);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover: card lifts with a deeper shadow */
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+}
+
+.card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 1.25rem;
+}
+
+.price {
+    font-weight: 600;
+    color: var(--orange);
+    margin-bottom: 0;
+}
+
+.cta {
+    text-align: center;
+    background-color: var(--cream);
+    padding: 3rem 1.25rem;
+}
+
+/* ---------- 9. ABOUT PAGE ---------- */
+/* Two columns: image left, text right */
+.about-story {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.about-image,
+.about-text {
+    flex: 1;
+}
+
+/* Rounded owner image */
+.about-image img {
+    width: 100%;
+    max-width: 420px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 0 auto;
+    border: 6px solid var(--cream);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Block quote with a left border */
+blockquote {
+    margin-top: 1.5rem;
+    padding: 1rem 1.5rem;
+    background-color: var(--cream);
+    border-left: 5px solid var(--orange);
+    font-family: var(--font-heading);
+    font-style: italic;
+    font-size: 1.15rem;
+}
+
+blockquote cite {
+    display: block;
+    margin-top: 0.5rem;
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    font-style: normal;
+    font-weight: 600;
+    color: var(--brown);
+}
+
+/* Values list */
+.values h2 {
+    text-align: center;
+}
+
+.values-list {
+    max-width: 700px;
+    margin: 0 auto;
+    padding-left: 1.5rem;
+}
+
+.values-list li {
+    margin-bottom: 0.75rem;
+}
+
+
+/* ---------- 10. MENU TABLES ---------- */
+.menu-section {
+    margin-bottom: 2.5rem;
+}
+
+/* Wrapper lets the table scroll sideways on small screens */
+.table-wrap {
+    overflow-x: auto;
+}
+
+.menu-table {
+    width: 100%;
+    min-width: 480px;
+    border-collapse: collapse;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.menu-table th,
+.menu-table td {
+    padding: 0.85rem 1rem;
+    text-align: left;
+}
+
+/* Header row in the primary colour */
+.menu-table thead th {
+    background-color: var(--brown);
+    color: var(--white);
+}
+
+/* Item names in the first column */
+.menu-table tbody th {
+    font-weight: 600;
+    color: var(--dark);
+}
+
+/* Zebra stripes */
+.menu-table tbody tr:nth-child(even) {
+    background-color: var(--cream);
+}
+
+/* Row hover highlight */
+.menu-table tbody tr {
+    transition: background-color 0.3s ease;
+}
+
+.menu-table tbody tr:hover {
+    background-color: #EBCFA9;
+}
+
+/* Right-aligned price column */
+.menu-table .price-col {
+    text-align: right;
+    white-space: nowrap;
+}
+
+/* ---------- 11. GALLERY (CSS Grid) ---------- */
+/* Grid is used here because images sit in equal rows and columns;
+   Flexbox is used for the nav and cards, which are one-dimensional. */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
+
+.gallery-grid figure {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Fill each cell without distortion */
+.gallery-grid img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+/* Hover: image zooms in */
+.gallery-grid figure:hover img {
+    transform: scale(1.1);
+}
+
+/* Caption overlay at the bottom of each image */
+.gallery-grid figcaption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 0.5rem;
+    text-align: center;
+    font-weight: 600;
+    color: var(--white);
+    background-color: rgba(43, 27, 18, 0.7);
+}
+
+
+/* ---------- 12. CONTACT PAGE ---------- */
+/* Two columns: form on the left, details on the right */
+.contact-layout {
+    display: flex;
+    gap: 3rem;
+    align-items: flex-start;
+}
+
+.contact-form-col,
+.contact-info-col {
+    flex: 1;
+}
+
+.contact-info-col h2:not(:first-child) {
+    margin-top: 2rem;
+}
+
+.form-group {
+    margin-bottom: 1.1rem;
+}
+
+.form-row {
+    display: flex;
+    gap: 1rem;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.3rem;
+    font-weight: 600;
+}
+
+/* Inputs fill 100% of their column */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+input[type="time"],
+select,
+textarea {
+    width: 100%;
+    padding: 0.7rem;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--dark);
+    border: 2px solid var(--brown);
+    border-radius: 6px;
+    background-color: var(--white);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Visible focus outline in the accent colour */
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 3px solid var(--orange);
+    outline-offset: 1px;
+    border-color: var(--orange);
+}
+
+fieldset {
+    margin-bottom: 1.1rem;
+    padding: 0.8rem 1rem;
+    border: 2px solid var(--brown);
+    border-radius: 6px;
+}
+
+legend {
+    padding: 0 0.5rem;
+    font-weight: 600;
+    color: var(--brown);
+}
+
+/* Radio buttons sit side by side */
+.radio-label {
+    display: inline-block;
+    margin-right: 1.25rem;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.contact-details {
+    list-style: none;
+}
+
+.contact-details li {
+    margin-bottom: 0.6rem;
+}
+
+/* ---------- 13. RESPONSIVE: TABLET (gallery 2 columns) ---------- */
+@media (max-width: 992px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ---------- 14. RESPONSIVE: 768px AND BELOW ---------- */
+@media (max-width: 768px) {
+
+    /* Header: links stack vertically below the logo */
+    .site-header {
+        flex-direction: column;
+        gap: 0.75rem;
+        padding: 0.75rem 1rem;
+    }
+
+    .main-nav {
+        width: 100%;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        gap: 0.25rem;
+        text-align: center;
+    }
+
+    /* Hero and banners */
+    .hero {
+        min-height: 360px;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .page-banner h1 {
+        font-size: 2rem;
+    }
+
+    /* Home: cards stack */
+    .card-row {
+        flex-direction: column;
+    }
+
+    /* About: image above text */
+    .about-story {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    /* Contact: columns stack, form first (it comes first in the HTML) */
+    .contact-layout {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    /* Footer columns stack */
+    .footer-columns {
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+    }
+}
+
+/* ---------- 15. RESPONSIVE: PHONES (gallery 1 column) ---------- */
+@media (max-width: 576px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+}
